@@ -15,7 +15,7 @@ import com.emgram.greeting.ui.theme.GreetingTheme
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContent {
+        /*setContent {
             GreetingTheme {
                 // A surface container using the 'background' color from the theme
                 Surface(
@@ -25,7 +25,9 @@ class MainActivity : ComponentActivity() {
                     Greeting("Android")
                 }
             }
-        }
+        }*/
+
+        setContentView(R.layout.recylce_exam)
     }
 }
 
