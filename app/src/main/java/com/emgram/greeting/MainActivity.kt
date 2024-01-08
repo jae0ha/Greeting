@@ -1,8 +1,11 @@
 package com.emgram.greeting
 
+import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
@@ -16,9 +19,23 @@ import androidx.recyclerview.widget.RecyclerView
 import com.emgram.greeting.ui.adapters.LocationAdapter
 import com.emgram.greeting.data.Location
 
-class MainActivity : ComponentActivity() {
+class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        setContentView(R.layout.activity_main)
+
+        // 버튼 참조
+        // activity_main 에서 정의한 지도 이동 버튼
+        val buttonMap = findViewById<Button>(R.id.button_open_map)
+
+        // 버튼클릭 리스너 설정
+        buttonMap.setOnClickListener {
+            // MapAcitivity로 이동하는 인텐트 생성
+            val intent = Intent(this, MapsActivity::class.java)
+            startActivity(intent)
+        }
+
         /*setContent {
             GreetingTheme {
                 // A surface container using the 'background' color from the theme
@@ -31,7 +48,7 @@ class MainActivity : ComponentActivity() {
             }
         }*/
 
-        setContentView(R.layout.recylce_exam)
+        /*setContentView(R.layout.recylce_exam)
 
         // RecyclerView 인스턴스를 가져옵니다.
         val recyclerView: RecyclerView = findViewById(R.id.recyclerView2)
@@ -41,7 +58,7 @@ class MainActivity : ComponentActivity() {
 
         // Adapter를 설정합니다.
         val locationAdapter = LocationAdapter(sampleLocations)
-        recyclerView.adapter = locationAdapter
+        recyclerView.adapter = locationAdapter*/
     }
 }
 
