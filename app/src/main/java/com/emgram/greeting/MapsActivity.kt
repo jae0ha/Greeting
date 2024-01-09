@@ -135,7 +135,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
                 } else {
                     // 현재 위치를 찾지 못한 경우, 한라산을 찍어 줍시다.
                     val hanlasan = LatLng(33.362361, 126.533277)
-                    mMap.addMarker(MarkerOptions().position(hanlasan).title("Marker in hanla mt"))
+                    mMap.addMarker(MarkerOptions().position(hanlasan).title("Cannot find your place goto hanla"))
                     mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(hanlasan, 8f))
                 }
             }
