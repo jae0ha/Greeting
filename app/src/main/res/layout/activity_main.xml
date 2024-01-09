@@ -11,6 +11,4 @@
         android:text="지도 보기"
         />
 
-    <!-- 나머지 화면을 자유롭게 꾸며 보세요 -->
-
 </LinearLayout>
